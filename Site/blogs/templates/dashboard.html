@@ -1,0 +1,43 @@
+{% if request.session.user_loggedin %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-user">
+        <div class="dropdown">
+          <button class="dropbtn">{{ user.name }}</button>
+          <div class="dropdown-content">
+            <a href=" {% url 'Logout' %}">Logout</a>
+            <a href=" # ">Help</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="add-post">
+      <a href="addPost/{{ user.id }}/"
+        ><button class="main-btn add-post">ADD POST</button></a
+      >
+    </div>
+
+    <div class="card-container">
+      {% for post in post_data%}
+      <div class="card">
+        <h1 class="card-title">{{post.title}}</h1>
+        <p class="card-content">{{post.content }}</p>
+        <div class="btns">
+          <a href="{% url 'update_post' post.id %}" class="main-btn">UPDATE</a>
+          <a href="{% url 'delete_post' post.id %}" class="main-btn">DELETE</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
+{% endif %}

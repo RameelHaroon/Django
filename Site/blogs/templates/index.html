@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <nav class="navbar"></nav>
+    <div class="container-1">
+      <div class="index_container">
+        <div class="card">
+          <img src="{% static 'blog.jpg' %}" alt="" />
+          <h1 class="card-title">Blog Posts</h1>
+          <p class="card-content">
+            Share your thoughts, experiences, and passions with the world. Your
+            stories, your voice, your blog.
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="{% static 'To_Do_List.jpg' %}" alt="" />
+          <h1 class="card-title">To-Do Lists</h1>
+          <p class="card-content">
+            Stay organized, stay focused. Turn your tasks into accomplishments
+            with our intuitive to-do lists.
+          </p>
+        </div>
+
+        <div class="card">
+          <img src="{% static 'journal.jpg' %}" alt="" />
+          <h1 class="card-title">Journals</h1>
+          <p class="card-content">
+            Capture your moments, reflect on your journey. Your personal
+            sanctuary, where memories meet introspection.
+          </p>
+        </div>
+      </div>
+      <div class="btn-div">
+        <a href="SignIn/"><button class="main-btn">Sign In</button></a>
+        <a href="SignUp/"><button class="main-btn">Sign Up</button></a>
+      </div>
+    </div>
+  </body>
+</html>
